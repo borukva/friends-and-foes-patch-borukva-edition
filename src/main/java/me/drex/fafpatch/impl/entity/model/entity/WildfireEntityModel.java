@@ -88,6 +88,9 @@ public final class WildfireEntityModel extends EntityModel<WildfireEntity> {
             this.shieldsModelParts.get(i).skipDraw = i > activeShieldsCount;
         }
 
+        // F&F only updates these animation states on the client (isClientSide) - start them here for server-side Polymer entities
+        wildfire.idleAnimationState.animateWhen(!wildfire.walkAnimation.isMoving(), wildfire.tickCount);
+        wildfire.shieldRotationAnimationState.animateWhen(wildfire.hasActiveShields(), wildfire.tickCount);
         this.root().getAllParts().forEach(ModelPart::resetPose);
         VersionedEntityModel.animate(this, this.idleAnimation, wildfire.idleAnimationState, wildfire.tickCount);
         VersionedEntityModel.animate(this, this.shieldRotationAnimation, wildfire.shieldRotationAnimationState, wildfire.tickCount);

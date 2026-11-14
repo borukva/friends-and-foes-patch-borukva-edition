@@ -69,6 +69,8 @@ public final class RascalEntityModel extends EntityModel<RascalEntity> {
         float limbAngle = rascal.walkAnimation.position(1);
         float limbDistance = rascal.walkAnimation.speed(1);
         this.root().getAllParts().forEach(ModelPart::resetPose);
+        // F&F only updates this animation state on the client (isClientSide)
+        rascal.idleAnimationState.animateWhen(!rascal.isInWater() && !rascal.walkAnimation.isMoving(), rascal.tickCount);
         VersionedEntityModel.animate(this, this.idleAnimation, rascal.idleAnimationState, rascal.tickCount);
         VersionedEntityModel.animate(this, this.nodAnimation, rascal.nodAnimationState, rascal.tickCount);
         VersionedEntityModel.animate(this, this.giveRewardAnimation, rascal.giveRewardAnimationState, rascal.tickCount);

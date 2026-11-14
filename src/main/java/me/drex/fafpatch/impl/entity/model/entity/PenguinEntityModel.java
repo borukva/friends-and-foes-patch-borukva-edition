@@ -83,6 +83,9 @@ public final class PenguinEntityModel extends EntityModel<PenguinEntity>
 
 	@Override
 	public void setupAnim(PenguinEntity penguin) {
+		// F&F only updates these animation states on the client (isClientSide)
+		penguin.idleAnimationState.animateWhen(!penguin.isInWater() && !penguin.walkAnimation.isMoving(), penguin.tickCount);
+		penguin.idleWaterAnimationState.animateWhen(penguin.isInWater() && !penguin.walkAnimation.isMoving(), penguin.tickCount);
 		this.root.getAllParts().forEach(ModelPart::resetPose);
 		this.updateKeyframeAnimations(penguin.wingFlapAnimationState, penguin.idleAnimationState, penguin.idleWaterAnimationState, penguin.walkAnimation.position(1), penguin.walkAnimation.speed(1), penguin.tickCount, penguin.isUnderWater(), penguin.isSwimming());
 		this.animateSwimming(penguin.getSwimProgress(1));

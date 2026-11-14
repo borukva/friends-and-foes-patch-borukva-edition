@@ -5,7 +5,10 @@
 	"mixins": [
 		"mod.TotemEffectPacketMixin",
 		"mod.entity.BarnacleEntityMixin",
+		"mod.entity.CrabEntityMixin",
+		"mod.entity.GlareEntityMixin",
 		"mod.entity.LivingEntityMixin",
+		"mod.entity.PenguinEntityMixin",
 		"mod.entity.VillagerMixin",
 		"mod.registry.EntitySerializersMixin",
 		"mod.registry.FabricEntityDataRegistryImplAccessor",

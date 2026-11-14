@@ -17,11 +17,11 @@ public abstract class FriendsAndFoesMapDecorationTypesMixin {
         method = "lambda$static$0",
         at = @At(
             value = "NEW",
-            target = "(Lnet/minecraft/resources/Identifier;ZZ)Lnet/minecraft/world/level/saveddata/maps/MapDecorationType;"
+            target = "(Lnet/minecraft/resources/Identifier;ZIZZ)Lnet/minecraft/world/level/saveddata/maps/MapDecorationType;"
         )
     )
-    private static MapDecorationType polymerify(Identifier assetId, boolean showOnItemFrame, boolean trackCount, Operation<MapDecorationType> original) {
-        var registryEntry = original.call(assetId, showOnItemFrame, trackCount);
+    private static MapDecorationType polymerify(Identifier assetId, boolean showOnItemFrame, int mapColor, boolean trackCount, boolean explorationMapElement, Operation<MapDecorationType> original) {
+        var registryEntry = original.call(assetId, showOnItemFrame, mapColor, trackCount, explorationMapElement);
         PolymerSyncedObject.setSyncedObject(BuiltInRegistries.MAP_DECORATION_TYPE, registryEntry, (_, _) -> MapDecorationTypes.RED_X.value());
         return registryEntry;
     }

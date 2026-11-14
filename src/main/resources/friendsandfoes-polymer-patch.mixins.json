@@ -21,6 +21,7 @@
 		"mod.registry.FriendsAndFoesParticleTypesMixin",
 		"mod.registry.FriendsAndFoesPointOfInterestTypesMixin",
 		"mod.registry.FriendsAndFoesPotionsMixin",
+		"mod.registry.FriendsAndFoesRecipesMixin",
 		"mod.registry.FriendsAndFoesSoundEventsMixin",
 		"mod.registry.FriendsAndFoesStatusEffectsMixin",
 		"mod.registry.FriendsAndFoesVillagerProfessionsMixin"

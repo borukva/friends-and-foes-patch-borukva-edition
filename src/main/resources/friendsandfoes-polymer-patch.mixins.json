@@ -9,6 +9,7 @@
 		"mod.entity.GlareEntityMixin",
 		"mod.entity.LivingEntityMixin",
 		"mod.entity.PenguinEntityMixin",
+		"mod.entity.PenguinSwimWithPlayerTaskMixin",
 		"mod.entity.VillagerMixin",
 		"mod.registry.EntitySerializersMixin",
 		"mod.registry.FabricEntityDataRegistryImplAccessor",

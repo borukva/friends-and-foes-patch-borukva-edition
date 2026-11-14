@@ -5,6 +5,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+- Minecraft 26.2 build: backport of 5.0.4-0+26.3 (works with Polymer 0.17.3+ and FactoryTools 0.11.x)
+
+### Fixed
+- Missing red hurt flash on damaged mobs (map_color tint on 26.2)
+- Wildfire shields not rotating and idle animations not playing for wildfire, crab, penguin, mauler and rascal
+- Crab wall climbing pose, penguin swimming pose and glare eye movement not shown
+
+### Removed
+- Brewing recipes for potions of gliding (the Glide effect cannot work on a server-side setup)
+- Penguins no longer give Penguin's Glide (boat speed) to players, for the same reason
 
 ## [5.0.4-0] - 2026-11-04
 ### Changed

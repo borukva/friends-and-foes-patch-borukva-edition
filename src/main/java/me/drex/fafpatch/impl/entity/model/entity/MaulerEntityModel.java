@@ -80,6 +80,9 @@ public final class MaulerEntityModel extends EntityModel<MaulerEntity> {
 
     @Override
     public void setupAnim(MaulerEntity mauler) {
+        // F&F only updates these animation states on the client (isClientSide)
+        mauler.idleAnimationState.animateWhen(!mauler.walkAnimation.isMoving(), mauler.tickCount);
+        mauler.snapAnimationState.animateWhen(mauler.isAngry() && mauler.walkAnimation.isMoving(), mauler.tickCount);
         this.root().getAllParts().forEach(ModelPart::resetPose);
         this.updateKeyframeAnimations(mauler.idleAnimationState, mauler.snapAnimationState, mauler.burrowDownAnimationState, mauler.burrowUpAnimationState, mauler.walkAnimation.position(1), mauler.walkAnimation.speed(1), mauler.tickCount);
     }

@@ -120,6 +120,8 @@ public class CrabEntityModel extends EntityModel<CrabEntity> {
     @Override
     public void setupAnim(CrabEntity crabEntity) {
         super.setupAnim(crabEntity);
+        // F&F only updates this animation state on the client (isClientSide)
+        crabEntity.idleAnimationState.animateWhen(!crabEntity.walkAnimation.isMoving(), crabEntity.tickCount);
 
         this.root().getAllParts().forEach(ModelPart::resetPose);
         this.updateKeyframeAnimations(crabEntity.idleAnimationState, crabEntity.waveAnimationState, crabEntity.danceAnimationState, crabEntity.walkAnimation.position(1), crabEntity.walkAnimation.speed(1), crabEntity.tickCount);

@@ -5,7 +5,11 @@
 	"mixins": [
 		"mod.TotemEffectPacketMixin",
 		"mod.entity.BarnacleEntityMixin",
+		"mod.entity.CrabEntityMixin",
+		"mod.entity.GlareEntityMixin",
 		"mod.entity.LivingEntityMixin",
+		"mod.entity.PenguinEntityMixin",
+		"mod.entity.PenguinSwimWithPlayerTaskMixin",
 		"mod.entity.VillagerMixin",
 		"mod.registry.EntitySerializersMixin",
 		"mod.registry.FabricEntityDataRegistryImplAccessor",
@@ -18,6 +22,7 @@
 		"mod.registry.FriendsAndFoesParticleTypesMixin",
 		"mod.registry.FriendsAndFoesPointOfInterestTypesMixin",
 		"mod.registry.FriendsAndFoesPotionsMixin",
+		"mod.registry.FriendsAndFoesRecipesMixin",
 		"mod.registry.FriendsAndFoesSoundEventsMixin",
 		"mod.registry.FriendsAndFoesStatusEffectsMixin",
 		"mod.registry.FriendsAndFoesVillagerProfessionsMixin"
